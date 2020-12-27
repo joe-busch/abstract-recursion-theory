@@ -11,7 +11,7 @@ m-1.
 
 import math
 
-max_input = 12500
+max_input = 15_000
 
 
 def find_least_m(a, b, gcd):
@@ -31,9 +31,12 @@ subalgebra.
 
 
 greatest_cx = 0
+header = '(input a, input b, value complexity m of gcd(a, b))'
+print(header)
+print('-' * len(header))
 
 for a in range(max_input):
-    for b in range(2, a):
+    for b in range(greatest_cx, a): # c(greatest_cx, a) <= greatest_cx
         gcd = math.gcd(a, b)
         m = find_least_m(a, b, gcd)
         if m > greatest_cx:
