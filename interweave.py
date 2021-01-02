@@ -1,5 +1,4 @@
-"""
-Simulates continuation passing style and wraps intermediate steps of
+"""Simulates continuation passing style and freezes intermediate steps of
 computations in thunks before sequentially bouncing them off a trampoline.
 Decides which computation converges in the fewest number of steps even
 if one of the computations does not converge. Can be viewed as a sort of
@@ -41,12 +40,12 @@ def interweave(f1, f2):
 
 
 def init_countdown1(x):
-    print('countdown1 won')
+    print('countdown1 converged first')
     exit()
 
 
 def init_countdown2(x):
-    print('countdown2 won')
+    print('countdown2 converged first')
     exit()
 
 
